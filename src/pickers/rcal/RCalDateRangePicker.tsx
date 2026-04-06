@@ -27,7 +27,7 @@ export function RCalDateRangePicker({ locale }: { locale: SupportedLocale }) {
     >
       <Calendar
         selectRange
-        onChange={(val) => setRange(val as [Date, Date])}
+        onChange={(val) => { if (Array.isArray(val) && val[0] instanceof Date && val[1] instanceof Date) setRange([val[0], val[1]]) }}
         value={range}
         locale={CAL_LOCALES[locale]}
       />

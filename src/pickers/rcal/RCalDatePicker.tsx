@@ -23,7 +23,7 @@ export function RCalDatePicker({ locale }: { locale: SupportedLocale }) {
       }
     >
       <Calendar
-        onChange={(d) => setDate(d as Date)}
+        onChange={(d) => { if (d instanceof Date) setDate(d) }}
         value={date}
         locale={CAL_LOCALES[locale]}
       />
