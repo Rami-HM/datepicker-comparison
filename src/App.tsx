@@ -1,4 +1,4 @@
-function App() {
+export function App() {
   return (
     <div>
       <h1>DatePicker Comparison</h1>
