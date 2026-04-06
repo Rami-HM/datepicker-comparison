@@ -1,0 +1,42 @@
+/* react-calendar CSS scoped under .rcal-scope */
+.rcal-scope .react-calendar {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+}
+.rcal-scope .react-calendar__navigation button {
+  font-size: 13px;
+  font-weight: 600;
+}
+.rcal-scope .react-calendar__tile--active {
+  background: #2563eb;
+  color: white;
+  border-radius: 4px;
+}
+.rcal-scope .react-calendar__tile--rangeStart,
+.rcal-scope .react-calendar__tile--rangeEnd {
+  background: #2563eb;
+  color: white;
+}
+.rcal-scope .react-calendar__tile--rangeBetween {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.rcal-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1.5px solid #2563eb;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #374151;
+  background: white;
+  cursor: pointer;
+  min-width: 180px;
+}
+.rcal-trigger:hover {
+  background: #eff6ff;
+}
