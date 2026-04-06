@@ -5,6 +5,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DateRange } from '@mui/x-date-pickers-pro/models'
 import { Dayjs } from 'dayjs'
 import { SupportedLocale } from '@/contexts/LocaleContext'
+import './muiLocales'
 
 export function MuiDateRangePicker({ locale }: { locale: SupportedLocale }) {
   const [value, setValue] = useState<DateRange<Dayjs>>([null, null])
