@@ -202,6 +202,7 @@ const [date, setDate] = useState<Date>()
 
   dateTimePicker: `// react-calendar v5 + react-time-picker 조합
 import { useState } from 'react'
+import { format } from 'date-fns'
 import Calendar from 'react-calendar'
 import TimePicker from 'react-time-picker'
 import * as Popover from '@radix-ui/react-popover'
@@ -214,7 +215,7 @@ const [time, setTime] = useState<string>('00:00')
 <Popover.Root>
   <Popover.Trigger asChild>
     <button className="rcal-trigger">
-      📅 {date ? \`\${format(date)} \${time}\` : '날짜·시간 선택'}
+      📅 {date ? \`\${format(date, 'yyyy.MM.dd')} \${time}\` : '날짜·시간 선택'}
     </button>
   </Popover.Trigger>
   <Popover.Content>
@@ -225,6 +226,7 @@ const [time, setTime] = useState<string>('00:00')
 
   dateRangePicker: `// react-calendar v5: selectRange prop 사용
 import { useState } from 'react'
+import { format } from 'date-fns'
 import Calendar from 'react-calendar'
 import * as Popover from '@radix-ui/react-popover'
 import 'react-calendar/dist/Calendar.css'
@@ -236,7 +238,7 @@ const [range, setRange] = useState<Range>(null)
 <Popover.Root>
   <Popover.Trigger asChild>
     <button className="rcal-trigger">
-      📅 {range ? \`\${format(range[0])} ~ \${format(range[1])}\` : '기간 선택'}
+      📅 {range ? \`\${format(range[0], 'yyyy.MM.dd')} ~ \${format(range[1], 'yyyy.MM.dd')}\` : '기간 선택'}
     </button>
   </Popover.Trigger>
   <Popover.Content>
