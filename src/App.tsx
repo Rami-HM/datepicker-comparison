@@ -7,6 +7,7 @@ import { DateRangePickerSection } from '@/sections/DateRangePickerSection'
 import { DateTimeRangeSection } from '@/sections/DateTimeRangeSection'
 import { LocaleSection } from '@/sections/LocaleSection'
 import { ThemeSection } from '@/sections/ThemeSection'
+import { ConstraintsSection } from '@/sections/ConstraintsSection'
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
             <Route path="/date-time-range-picker" element={<DateTimeRangeSection />} />
             <Route path="/locale" element={<LocaleSection />} />
             <Route path="/theme" element={<ThemeSection />} />
+            <Route path="/constraints" element={<ConstraintsSection />} />
           </Routes>
         </AppShell>
       </BrowserRouter>

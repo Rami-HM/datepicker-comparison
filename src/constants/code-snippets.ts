@@ -282,3 +282,81 @@ const [endTime, setEndTime] = useState('23:59')
   </Popover.Content>
 </Popover.Root>`,
 }
+
+export const CONSTRAINTS_SNIPPETS = {
+  mui_date: `// 주말 비활성화 + min/max
+import dayjs from 'dayjs'
+
+<DatePicker
+  shouldDisableDate={(d) => d.day() === 0 || d.day() === 6}
+  minDate={dayjs()}
+  maxDate={dayjs().add(30, 'day')}
+/>`,
+
+  mui_time: `// 시간 제한 09:00 ~ 18:00
+import dayjs from 'dayjs'
+
+<DateTimePicker
+  minTime={dayjs().hour(9).minute(0)}
+  maxTime={dayjs().hour(18).minute(0)}
+/>`,
+
+  antd_date: `// 주말 비활성화 + min/max
+import dayjs from 'dayjs'
+const today = dayjs()
+
+<DatePicker
+  disabledDate={(d) =>
+    d.day() === 0 || d.day() === 6 ||
+    d.isBefore(today, 'day') ||
+    d.isAfter(today.add(30, 'day'), 'day')
+  }
+/>`,
+
+  antd_time: `// 시간 제한 09:00 ~ 18:00
+<DatePicker
+  showTime
+  disabledTime={() => ({
+    disabledHours: () =>
+      [...Array(9).keys(), 19, 20, 21, 22, 23],
+  })}
+/>`,
+
+  shadcn_date: `// 주말 비활성화 + min/max (react-day-picker v9)
+import { addDays } from 'date-fns'
+const today = new Date()
+
+<Calendar
+  disabled={[
+    { dayOfWeek: [0, 6] },
+    { before: today },
+    { after: addDays(today, 30) },
+  ]}
+  startMonth={today}
+  endMonth={addDays(today, 30)}
+/>`,
+
+  shadcn_time: `// 시간 제한 09:00 ~ 18:00
+<input
+  type="time"
+  min="09:00"
+  max="18:00"
+/>`,
+
+  rcal_date: `// 주말 비활성화 + min/max
+const today = new Date()
+
+<Calendar
+  minDate={today}
+  maxDate={new Date(today.getFullYear(),
+    today.getMonth(), today.getDate() + 30)}
+  tileDisabled={({ date }) =>
+    date.getDay() === 0 || date.getDay() === 6}
+/>`,
+
+  rcal_time: `// 시간 제한 09:00 ~ 18:00
+<TimePicker
+  minTime="09:00"
+  maxTime="18:00"
+/>`,
+}

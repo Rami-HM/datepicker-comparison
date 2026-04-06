@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { to: '/date-time-range-picker', label: 'DateTimeRange', icon: '🕑' },
   { to: '/locale', label: 'Locale', icon: '🌐' },
   { to: '/theme', label: 'Theme', icon: '🎨' },
+  { to: '/constraints', label: 'Constraints', icon: '🔒' },
 ]
 
 export function Sidebar() {
