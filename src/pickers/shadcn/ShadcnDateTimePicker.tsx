@@ -3,11 +3,8 @@ import { Calendar } from '@/components/ui/calendar'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Button } from '@/components/ui/button'
 import { format } from 'date-fns'
-import { ko, enUS, ja } from 'date-fns/locale'
-import type { Locale } from 'date-fns'
 import { SupportedLocale } from '@/contexts/LocaleContext'
-
-const DATE_FNS_LOCALES: Record<SupportedLocale, Locale> = { ko, en: enUS, ja }
+import { DATE_FNS_LOCALES, PLACEHOLDER_LABELS } from './shadcnLocales'
 
 export function ShadcnDateTimePicker({ locale }: { locale: SupportedLocale }) {
   const [date, setDate] = useState<Date>()
@@ -18,7 +15,7 @@ export function ShadcnDateTimePicker({ locale }: { locale: SupportedLocale }) {
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline" style={{ minWidth: 220 }}>
-          🕐 {date ? `${format(date, 'yyyy.MM.dd', { locale: fnsLocale })} ${time}` : '날짜·시간 선택'}
+          🕐 {date ? `${format(date, 'yyyy.MM.dd', { locale: fnsLocale })} ${time}` : PLACEHOLDER_LABELS[locale].dateTime}
         </Button>
       </PopoverTrigger>
       <PopoverContent align="start" style={{ width: 'auto', padding: 0 }}>
