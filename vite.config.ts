@@ -11,6 +11,21 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-mui': ['@mui/x-date-pickers', '@mui/x-date-pickers-pro', '@emotion/react', '@emotion/styled'],
+          'vendor-antd': ['antd'],
+          'vendor-rcal': ['react-calendar', 'react-time-picker'],
+          'vendor-shadcn': ['@radix-ui/react-popover', 'react-day-picker', 'date-fns'],
+          'vendor-misc': ['dayjs', 'react-syntax-highlighter'],
+        },
+      },
+    },
+  },
   test: {
     environment: 'happy-dom',
     globals: true,
