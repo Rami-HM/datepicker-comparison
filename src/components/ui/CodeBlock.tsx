@@ -16,9 +16,9 @@ export function CodeBlock({ code }: CodeBlockProps) {
         style={{
           width: '100%',
           padding: '8px 16px',
+          border: 'none',
           borderTop: '1px solid #f3f4f6',
           background: open ? '#f9fafb' : 'white',
-          border: 'none',
           textAlign: 'left',
           cursor: 'pointer',
           fontSize: 11,

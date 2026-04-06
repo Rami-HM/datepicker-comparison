@@ -12,5 +12,7 @@ describe('CodeBlock', () => {
     render(<CodeBlock code="const x = 1" />)
     fireEvent.click(screen.getByText('코드 보기'))
     expect(screen.getByText('코드 닫기')).toBeInTheDocument()
+    // Verify the highlighter container is mounted
+    expect(document.querySelector('pre')).toBeInTheDocument()
   })
 })
