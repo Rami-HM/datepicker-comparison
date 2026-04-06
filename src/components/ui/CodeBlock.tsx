@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 interface CodeBlockProps {
   code: string
@@ -32,9 +32,9 @@ export function CodeBlock({ code }: CodeBlockProps) {
       </button>
       {open && (
         <SyntaxHighlighter
-          language="tsx"
-          style={githubGist}
-          customStyle={{ margin: 0, fontSize: 11, borderTop: '1px solid #e5e7eb' }}
+          language="typescript"
+          style={atomOneDark}
+          customStyle={{ margin: 0, fontSize: 11, borderRadius: '0 0 8px 8px' }}
         >
           {code}
         </SyntaxHighlighter>
