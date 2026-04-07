@@ -25,7 +25,7 @@ const PROBLEMS = [
   },
   {
     title: 'DateRangePicker 내 time select 구현의 어려움',
-    desc: 'TimePicker를 RangePicker에 통합하는 구조적 어려움으로 DateRangePicker에 시간 선택 기능을 추가하기 어렵습니다.',
+    desc: 'DateRangePicker에 시간 선택 기능을 추가하는 것이 복잡하며, TimePicker를 RangePicker에 통합하는 구조적 어려움이 있습니다.',
   },
 ]
 
