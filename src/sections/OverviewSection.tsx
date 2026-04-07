@@ -68,9 +68,12 @@ export function OverviewSection() {
 
       {/* 현재 문제점 */}
       <div style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
-          <span style={{ color: '#f59e0b' }}>⚠️</span> 현재 DatePicker 컴포넌트의 문제점
+        <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
+          <span style={{ color: '#f59e0b' }}>⚠️</span> sirius-ui 현재 antd DatePicker의 문제점
         </h2>
+        <p style={{ fontSize: 12, color: '#9ca3af', marginBottom: 12 }}>
+          아래는 현재 sirius-ui에서 사용 중인 antd 기반 구현의 한계입니다. 라이브러리 교체를 검토하게 된 배경입니다.
+        </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {PROBLEMS.map((p, i) => (
             <div key={i} style={{
