@@ -10,6 +10,8 @@ const NAV_ITEMS = [
   { to: '/locale', label: 'Locale', icon: '🌐', group: 'compare' },
   { to: '/theme', label: 'Theme', icon: '🎨', group: 'compare' },
   { to: '/constraints', label: 'Constraints', icon: '🔒', group: 'compare' },
+  { to: '/year-month', label: 'Year/Month', icon: '🗓️', group: 'compare' },
+  { to: '/time-step', label: 'Time Step', icon: '⏱️', group: 'compare' },
   { to: '/vote', label: 'Vote', icon: '🗳️', group: 'vote' },
 ]
 

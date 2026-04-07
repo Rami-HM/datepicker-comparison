@@ -10,6 +10,8 @@ import { ThemeSection } from '@/sections/ThemeSection'
 import { ConstraintsSection } from '@/sections/ConstraintsSection'
 import { VoteSection } from '@/sections/VoteSection'
 import { OverviewSection } from '@/sections/OverviewSection'
+import { YearMonthSection } from '@/sections/YearMonthSection'
+import { TimeStepSection } from '@/sections/TimeStepSection'
 
 export function App() {
   return (
@@ -25,6 +27,8 @@ export function App() {
             <Route path="/theme" element={<ThemeSection />} />
             <Route path="/constraints" element={<ConstraintsSection />} />
             <Route path="/overview" element={<OverviewSection />} />
+            <Route path="/year-month" element={<YearMonthSection />} />
+            <Route path="/time-step" element={<TimeStepSection />} />
             <Route path="/vote" element={<VoteSection />} />
           </Routes>
         </AppShell>
