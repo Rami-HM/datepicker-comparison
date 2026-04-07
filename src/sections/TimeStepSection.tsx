@@ -11,14 +11,13 @@ import { Button } from '@/components/ui/button'
 import { format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 import Calendar2 from 'react-calendar'
-import TimePicker from 'react-time-picker'
 import { RCalPopover } from '@/pickers/rcal/RCalPopover'
 import {
   DatePicker as AriaDP, Group, Button as AriaButton,
   Popover as AriaPopover, Dialog, Calendar as AriaCalendar,
   CalendarGrid, CalendarGridBody, CalendarGridHeader,
   CalendarHeaderCell, CalendarCell, Heading,
-  DateInput, DateSegment, I18nProvider, TimeField,
+  DateInput, DateSegment, I18nProvider,
 } from 'react-aria-components'
 import { LibraryCard } from '@/components/ui/LibraryCard'
 import '@/pickers/rcal/rcal.css'
