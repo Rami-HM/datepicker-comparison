@@ -8,6 +8,7 @@ import { DateTimeRangeSection } from '@/sections/DateTimeRangeSection'
 import { LocaleSection } from '@/sections/LocaleSection'
 import { ThemeSection } from '@/sections/ThemeSection'
 import { ConstraintsSection } from '@/sections/ConstraintsSection'
+import { VoteSection } from '@/sections/VoteSection'
 
 export function App() {
   return (
@@ -22,6 +23,7 @@ export function App() {
             <Route path="/locale" element={<LocaleSection />} />
             <Route path="/theme" element={<ThemeSection />} />
             <Route path="/constraints" element={<ConstraintsSection />} />
+            <Route path="/vote" element={<VoteSection />} />
           </Routes>
         </AppShell>
       </BrowserRouter>
