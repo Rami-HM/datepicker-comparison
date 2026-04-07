@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router-dom'
 
 const NAV_ITEMS = [
+  { to: '/overview', label: 'Overview', icon: '📋', group: 'overview' },
   { to: '/', label: 'DatePicker', icon: '📅', group: 'compare' },
   { to: '/date-time-picker', label: 'DateTimePicker', icon: '🕐', group: 'compare' },
   { to: '/date-range-picker', label: 'DateRangePicker', icon: '📆', group: 'compare' },
@@ -22,6 +23,29 @@ export function Sidebar() {
       background: 'white',
       overflowY: 'auto',
     }}>
+      {NAV_ITEMS.filter((i) => i.group === 'overview').map((item) => (
+        <NavLink
+          key={item.to}
+          to={item.to}
+          style={({ isActive }) => ({
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
+            padding: '7px 8px',
+            borderRadius: 6,
+            fontSize: 13,
+            textDecoration: 'none',
+            marginBottom: 8,
+            background: isActive ? '#eff6ff' : 'transparent',
+            color: isActive ? '#1d4ed8' : '#6b7280',
+            fontWeight: isActive ? 600 : 400,
+          })}
+        >
+          <span>{item.icon}</span>
+          <span>{item.label}</span>
+        </NavLink>
+      ))}
+
       <p style={{
         fontSize: 10, fontWeight: 600, color: '#9ca3af',
         textTransform: 'uppercase', letterSpacing: '0.08em',
