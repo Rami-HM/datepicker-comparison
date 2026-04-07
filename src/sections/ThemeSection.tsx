@@ -3,7 +3,8 @@ import { MuiDatePicker } from '@/pickers/mui/MuiDatePicker'
 import { AntdDatePicker } from '@/pickers/antd/AntdDatePicker'
 import { ShadcnDatePicker } from '@/pickers/shadcn/ShadcnDatePicker'
 import { RCalDatePicker } from '@/pickers/rcal/RCalDatePicker'
-import { MUI_SNIPPETS, ANTD_SNIPPETS, SHADCN_SNIPPETS, RCAL_SNIPPETS } from '@/constants/code-snippets'
+import { AriaDatePicker } from '@/pickers/aria/AriaDatePicker'
+import { MUI_SNIPPETS, ANTD_SNIPPETS, SHADCN_SNIPPETS, RCAL_SNIPPETS, ARIA_SNIPPETS } from '@/constants/code-snippets'
 
 export function ThemeSection() {
   return (
@@ -26,6 +27,9 @@ export function ThemeSection() {
         </LibraryCard>
         <LibraryCard name="react-calendar" version="기본 CSS 스타일" code={RCAL_SNIPPETS.datePicker}>
           <RCalDatePicker locale="ko" />
+        </LibraryCard>
+        <LibraryCard name="React Aria" version="커스텀 CSS (headless)" code={ARIA_SNIPPETS.datePicker}>
+          <AriaDatePicker locale="ko" />
         </LibraryCard>
       </div>
     </div>

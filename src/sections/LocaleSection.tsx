@@ -5,7 +5,8 @@ import { MuiDatePicker } from '@/pickers/mui/MuiDatePicker'
 import { AntdDatePicker } from '@/pickers/antd/AntdDatePicker'
 import { ShadcnDatePicker } from '@/pickers/shadcn/ShadcnDatePicker'
 import { RCalDatePicker } from '@/pickers/rcal/RCalDatePicker'
-import { MUI_SNIPPETS, ANTD_SNIPPETS, SHADCN_SNIPPETS, RCAL_SNIPPETS } from '@/constants/code-snippets'
+import { AriaDatePicker } from '@/pickers/aria/AriaDatePicker'
+import { MUI_SNIPPETS, ANTD_SNIPPETS, SHADCN_SNIPPETS, RCAL_SNIPPETS, ARIA_SNIPPETS } from '@/constants/code-snippets'
 
 export function LocaleSection() {
   const { locale } = useLocale()
@@ -14,7 +15,7 @@ export function LocaleSection() {
       <div style={{ marginBottom: 20 }}>
         <h1 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>🌐 Locale</h1>
         <p style={{ fontSize: 13, color: '#6b7280' }}>
-          locale을 전환하면 4개 라이브러리 모두 즉시 반영됩니다.
+          locale을 전환하면 5개 라이브러리 모두 즉시 반영됩니다.
         </p>
       </div>
       <LocaleSwitcher />
@@ -30,6 +31,9 @@ export function LocaleSection() {
         </LibraryCard>
         <LibraryCard name="react-calendar" version="locale prop (IETF)" code={RCAL_SNIPPETS.datePicker}>
           <RCalDatePicker locale={locale} />
+        </LibraryCard>
+        <LibraryCard name="React Aria" version="I18nProvider (BCP 47)" code={ARIA_SNIPPETS.datePicker}>
+          <AriaDatePicker locale={locale} />
         </LibraryCard>
       </div>
     </div>

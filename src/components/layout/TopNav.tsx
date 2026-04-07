@@ -5,6 +5,7 @@ const LIBRARY_BADGES = [
   { label: 'antd v5', bg: '#fff7e6', color: '#d46b08' },
   { label: 'shadcn/ui', bg: '#f3f4f6', color: '#374151' },
   { label: 'react-calendar v5', bg: '#fef3c7', color: '#b45309' },
+  { label: 'React Aria v1', bg: '#fce7f3', color: '#9d174d' },
 ]
 
 export function TopNav() {

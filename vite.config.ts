@@ -21,6 +21,7 @@ export default defineConfig({
           'vendor-antd': ['antd'],
           'vendor-rcal': ['react-calendar', 'react-time-picker'],
           'vendor-shadcn': ['@radix-ui/react-popover', 'react-day-picker', 'date-fns'],
+          'vendor-aria': ['react-aria-components', '@internationalized/date'],
           'vendor-misc': ['dayjs', 'react-syntax-highlighter'],
         },
       },

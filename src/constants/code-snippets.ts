@@ -283,6 +283,166 @@ const [endTime, setEndTime] = useState('23:59')
 </Popover.Root>`,
 }
 
+export const ARIA_SNIPPETS = {
+  datePicker: `import {
+  DatePicker, Group, Button, Popover, Dialog,
+  Calendar, CalendarGrid, CalendarGridHeader,
+  CalendarGridBody, CalendarHeaderCell, CalendarCell,
+  Heading, DateInput, DateSegment, I18nProvider,
+} from 'react-aria-components'
+
+<I18nProvider locale="ko-KR">
+  <DatePicker>
+    <Group className="aria-group">
+      <DateInput className="aria-dateinput">
+        {(segment) => <DateSegment segment={segment} />}
+      </DateInput>
+      <Button>📅</Button>
+    </Group>
+    <Popover>
+      <Dialog>
+        <Calendar>
+          <header>
+            <Button slot="previous">‹</Button>
+            <Heading />
+            <Button slot="next">›</Button>
+          </header>
+          <CalendarGrid>
+            <CalendarGridHeader>
+              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+            </CalendarGridHeader>
+            <CalendarGridBody>
+              {(date) => <CalendarCell date={date} />}
+            </CalendarGridBody>
+          </CalendarGrid>
+        </Calendar>
+      </Dialog>
+    </Popover>
+  </DatePicker>
+</I18nProvider>`,
+
+  dateTimePicker: `import {
+  DatePicker, Group, Button, Popover, Dialog,
+  Calendar, CalendarGrid, CalendarGridHeader,
+  CalendarGridBody, CalendarHeaderCell, CalendarCell,
+  Heading, DateInput, DateSegment, I18nProvider,
+} from 'react-aria-components'
+
+// granularity="minute" 으로 날짜+시간 세그먼트 자동 표시
+<I18nProvider locale="ko-KR">
+  <DatePicker granularity="minute">
+    <Group className="aria-group">
+      <DateInput className="aria-dateinput">
+        {(segment) => <DateSegment segment={segment} />}
+      </DateInput>
+      <Button>📅</Button>
+    </Group>
+    <Popover>
+      <Dialog>
+        <Calendar>
+          <header>
+            <Button slot="previous">‹</Button>
+            <Heading />
+            <Button slot="next">›</Button>
+          </header>
+          <CalendarGrid>
+            <CalendarGridHeader>
+              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+            </CalendarGridHeader>
+            <CalendarGridBody>
+              {(date) => <CalendarCell date={date} />}
+            </CalendarGridBody>
+          </CalendarGrid>
+        </Calendar>
+      </Dialog>
+    </Popover>
+  </DatePicker>
+</I18nProvider>`,
+
+  dateRangePicker: `import {
+  DateRangePicker, Group, Button, Popover, Dialog,
+  RangeCalendar, CalendarGrid, CalendarGridHeader,
+  CalendarGridBody, CalendarHeaderCell, CalendarCell,
+  Heading, DateInput, DateSegment, I18nProvider,
+} from 'react-aria-components'
+
+<I18nProvider locale="ko-KR">
+  <DateRangePicker>
+    <Group className="aria-range-group">
+      <DateInput slot="start" className="aria-dateinput">
+        {(segment) => <DateSegment segment={segment} />}
+      </DateInput>
+      <span>~</span>
+      <DateInput slot="end" className="aria-dateinput">
+        {(segment) => <DateSegment segment={segment} />}
+      </DateInput>
+      <Button>📅</Button>
+    </Group>
+    <Popover>
+      <Dialog>
+        <RangeCalendar>
+          <header>
+            <Button slot="previous">‹</Button>
+            <Heading />
+            <Button slot="next">›</Button>
+          </header>
+          <CalendarGrid>
+            <CalendarGridHeader>
+              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+            </CalendarGridHeader>
+            <CalendarGridBody>
+              {(date) => <CalendarCell date={date} />}
+            </CalendarGridBody>
+          </CalendarGrid>
+        </RangeCalendar>
+      </Dialog>
+    </Popover>
+  </DateRangePicker>
+</I18nProvider>`,
+
+  dateTimeRangePicker: `import {
+  DateRangePicker, Group, Button, Popover, Dialog,
+  RangeCalendar, CalendarGrid, CalendarGridHeader,
+  CalendarGridBody, CalendarHeaderCell, CalendarCell,
+  Heading, DateInput, DateSegment, I18nProvider,
+} from 'react-aria-components'
+
+// granularity="minute" 으로 날짜+시간 범위 선택
+<I18nProvider locale="ko-KR">
+  <DateRangePicker granularity="minute">
+    <Group className="aria-range-group">
+      <DateInput slot="start" className="aria-dateinput">
+        {(segment) => <DateSegment segment={segment} />}
+      </DateInput>
+      <span>~</span>
+      <DateInput slot="end" className="aria-dateinput">
+        {(segment) => <DateSegment segment={segment} />}
+      </DateInput>
+      <Button>📅</Button>
+    </Group>
+    <Popover>
+      <Dialog>
+        <RangeCalendar>
+          <header>
+            <Button slot="previous">‹</Button>
+            <Heading />
+            <Button slot="next">›</Button>
+          </header>
+          <CalendarGrid>
+            <CalendarGridHeader>
+              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+            </CalendarGridHeader>
+            <CalendarGridBody>
+              {(date) => <CalendarCell date={date} />}
+            </CalendarGridBody>
+          </CalendarGrid>
+        </RangeCalendar>
+      </Dialog>
+    </Popover>
+  </DateRangePicker>
+</I18nProvider>`,
+}
+
 export const CONSTRAINTS_SNIPPETS = {
   mui_date: `// 주말 비활성화 + min/max
 import dayjs from 'dayjs'
@@ -359,4 +519,39 @@ const today = new Date()
   minTime="09:00"
   maxTime="18:00"
 />`,
+
+  aria_date: `// 주말 비활성화 + min/max (isDateUnavailable + CalendarDate)
+import { today, getLocalTimeZone, CalendarDate } from '@internationalized/date'
+import { isWeekend } from '@internationalized/date'
+
+const tz = getLocalTimeZone()
+const minDate = today(tz)
+const maxDate = minDate.add({ days: 30 })
+
+<I18nProvider locale="ko-KR">
+  <DatePicker
+    minValue={minDate}
+    maxValue={maxDate}
+    isDateUnavailable={(d) => isWeekend(d, 'ko-KR')}
+  >
+    {/* ... */}
+  </DatePicker>
+</I18nProvider>`,
+
+  aria_time: `// 시간 제한 09:00 ~ 18:00 (ZonedDateTime minValue/maxValue)
+import { now, getLocalTimeZone } from '@internationalized/date'
+
+const tz = getLocalTimeZone()
+const minTime = now(tz).set({ hour: 9, minute: 0 })
+const maxTime = now(tz).set({ hour: 18, minute: 0 })
+
+<I18nProvider locale="ko-KR">
+  <DatePicker
+    granularity="minute"
+    minValue={minTime}
+    maxValue={maxTime}
+  >
+    {/* ... */}
+  </DatePicker>
+</I18nProvider>`,
 }

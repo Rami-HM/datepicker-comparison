@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import dayjs, { Dayjs } from 'dayjs'
 import { addDays } from 'date-fns'
+import { AriaDateConstraints, AriaTimeConstraints } from '@/pickers/aria/AriaConstraints'
 import { DatePicker as MuiDatePickerComp } from '@mui/x-date-pickers/DatePicker'
 import { DateTimePicker as MuiDateTimePickerComp } from '@mui/x-date-pickers/DateTimePicker'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -230,6 +231,9 @@ export function ConstraintsSection() {
         <LibraryCard name="react-calendar" version="tileDisabled + minDate/maxDate" code={CONSTRAINTS_SNIPPETS.rcal_date}>
           <RCalDateConstraints />
         </LibraryCard>
+        <LibraryCard name="React Aria" version="isDateUnavailable + minValue/maxValue" code={CONSTRAINTS_SNIPPETS.aria_date}>
+          <AriaDateConstraints />
+        </LibraryCard>
       </div>
 
       <SubTitle>시간 제한 — 09:00 ~ 18:00 만 선택 가능</SubTitle>
@@ -245,6 +249,9 @@ export function ConstraintsSection() {
         </LibraryCard>
         <LibraryCard name="react-calendar" version="TimePicker minTime/maxTime" code={CONSTRAINTS_SNIPPETS.rcal_time}>
           <RCalTimeConstraints />
+        </LibraryCard>
+        <LibraryCard name="React Aria" version="granularity=minute (세그먼트 직접 입력)" code={CONSTRAINTS_SNIPPETS.aria_time}>
+          <AriaTimeConstraints />
         </LibraryCard>
       </div>
     </div>

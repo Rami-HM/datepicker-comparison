@@ -5,7 +5,8 @@ import { MuiDateRangePicker } from '@/pickers/mui/MuiDateRangePicker'
 import { AntdDateRangePicker } from '@/pickers/antd/AntdDateRangePicker'
 import { ShadcnDateRangePicker } from '@/pickers/shadcn/ShadcnDateRangePicker'
 import { RCalDateRangePicker } from '@/pickers/rcal/RCalDateRangePicker'
-import { MUI_SNIPPETS, ANTD_SNIPPETS, SHADCN_SNIPPETS, RCAL_SNIPPETS } from '@/constants/code-snippets'
+import { AriaDateRangePicker } from '@/pickers/aria/AriaDateRangePicker'
+import { MUI_SNIPPETS, ANTD_SNIPPETS, SHADCN_SNIPPETS, RCAL_SNIPPETS, ARIA_SNIPPETS } from '@/constants/code-snippets'
 
 export function DateRangePickerSection() {
   const { locale } = useLocale()
@@ -28,6 +29,9 @@ export function DateRangePickerSection() {
         </LibraryCard>
         <LibraryCard name="react-calendar" version="v5 selectRange" code={RCAL_SNIPPETS.dateRangePicker}>
           <RCalDateRangePicker locale={locale} />
+        </LibraryCard>
+        <LibraryCard name="React Aria" version="react-aria-components v1" code={ARIA_SNIPPETS.dateRangePicker}>
+          <AriaDateRangePicker locale={locale} />
         </LibraryCard>
       </div>
     </div>
