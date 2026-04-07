@@ -118,20 +118,6 @@ export function YearMonthSection() {
         </p>
       </div>
 
-      <div style={{
-        background: '#fef3c7',
-        border: '1px solid #fde68a',
-        borderLeft: '4px solid #f59e0b',
-        borderRadius: 8,
-        padding: '10px 16px',
-        marginBottom: 20,
-        fontSize: 12,
-        color: '#92400e',
-      }}>
-        <strong>기존 antd 문제:</strong> YearMonthSelect에서 연도/월을 변경하면 선택된 날짜가 자동으로 변경됨.
-        캘린더 표시만 바뀌고 선택된 날짜는 유지되어야 합니다.
-      </div>
-
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
         <LibraryCard name="MUI" version="뷰 변경 ≠ 선택 날짜 변경" code={MUI_SNIPPET}>
           <MuiYearMonth />
